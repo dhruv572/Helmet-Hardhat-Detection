@@ -68,7 +68,7 @@ def process_video_stream(video_file=None, rtsp_url=None):
                         #save SNAPSHOT when "NO-Hardhat" is detected
                         screenshot_path = f"snapshots/no_helmet_{frame_count}.png"
                         cv2.imwrite(screenshot_path, img)
-                        frame_count += 1 #increment the file count for unique file names
+                        frame_count += 1 
                     if currentClass == 'Hardhat':
                         myColor = (0, 255, 0)
 
@@ -97,7 +97,7 @@ if option == "Webcam":
     st.write("Click 'Start' to begin object detection from webcam stream.")
     if st.button('Start'):
         process_video_stream()
-
+# Use this under-comment section for connectivity with Real-Time CCTV Camera Integration
 # elif option == "RTSP Stream":
 #     rtsp_url = st.text_input("Enter RTSP URl (e.g. rtsp://<IP_ADDRESS>:<PORT>/<path>)")
 #     if rtsp_url and st.button('start'):
